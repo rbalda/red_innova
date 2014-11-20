@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="RedInnova">
+    <head>
+        <meta charset="utf-8"/>
+        <script src="js/jquery/dist/jquery.js"></script>
+        <script src="js/angular/angular.js"></script>
+        <script src="foundation/js/foundation.min.js"></script>
+<!--        <link href="foundation/css/foundation.css" rel="stylesheet"/>-->
+        <script src='js/app/main.js'></script>
+        <link href="css/styles.css" rel="stylesheet"/>
+    </head>
+    <body>
+        <div id="toolbar">
+            <input type='text' placeholder='Busqueda...'/>
+        </div>
+        <header id="header">
+            <div id='menu-top' ng-controller='menuTopCtrl as mtopCtr'>
+                <div id='logo'>    
+                </div>
+                <ul>
+                    <li ng-repeat="op in mtopCtr.opciones"><a href="{{op.url}}">{{op.name}}</a></li>
+                </ul>
+            </div>
+        </header>
+        <nav id="menu-bar"></nav>
+        <main id="content"></main>
+        <footer id="footer"></footer>
+    </body>
+</html>
