@@ -9,7 +9,7 @@
         <script src='js/app/main.js'></script>
         <link href="css/styles.css" rel="stylesheet"/>
     </head>
-    <body>
+    <body class='cyan'>
         <div id="toolbar">
             <input type='text' placeholder='Busqueda...'/>
         </div>
@@ -18,7 +18,12 @@
                 <div id='logo'>    
                 </div>
                 <ul>
-                    <li ng-repeat="op in mtopCtr.opciones"><a href="{{op.url}}">{{op.name}}</a></li>
+                    <li ng-repeat="op in mtopCtr.opciones" >
+                        <a ng-click="mtopCtr.changeBack(op.color)">
+                            <span >{{op.name}}</span>
+                            <div class='{{op.color}}'></div>
+                        </a>
+                    </li>
                 </ul>
             </div>
         </header>
