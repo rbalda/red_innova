@@ -1,0 +1,154 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Login</title>
+
+<link href="css/styles.css" rel="stylesheet"/>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+
+
+<script type="text/javascript">
+$(document).ready(function() {
+	$('a.login-window').click(function() {
+		
+		// Getting the variable's value from a link 
+		var loginBox = $(this).attr('href');
+
+		//Fade in the Popup and add close button
+		$(loginBox).fadeIn(300);
+		
+		//Set the center alignment padding + border
+		var popMargTop = ($(loginBox).height() + 24) / 2; 
+		var popMargLeft = ($(loginBox).width() + 24) / 2; 
+		
+		$(loginBox).css({ 
+			'margin-top' : -popMargTop,
+			'margin-left' : -popMargLeft
+		});
+		
+		// Add the mask to body
+		$('body').append('<div id="mask"></div>');
+		$('#mask').fadeIn(300);
+		
+		return false;
+	});
+	
+	// When clicking on the button close or the mask layer the popup closed
+	$('a.close, #mask').live('click', function() { 
+	  $('#mask , .login-popup').fadeOut(300 , function() {
+		$('#mask').remove();  
+	}); 
+	return false;
+	});
+});
+
+
+
+
+$(document).ready(function() {
+	$('a.register-window').click(function() {
+		
+		// Getting the variable's value from a link 
+		var regisBox = $(this).attr('href');
+
+		//Fade in the Popup and add close button
+		$(regisBox).fadeIn(300);
+		
+		//Set the center alignment padding + border
+		var popMargTop = ($(regisBox).height() + 24) / 2; 
+		var popMargLeft = ($(regisBox).width() + 24) / 2; 
+		
+		$(regisBox).css({ 
+			'margin-top' : -popMargTop,
+			'margin-left' : -popMargLeft
+		});
+		
+		// Add the mask to body
+		$('body').append('<div id="mask"></div>');
+		$('#mask').fadeIn(300);
+		
+		return false;
+	});
+	
+	// When clicking on the button close or the mask layer the popup closed
+	$('a.close, #mask').live('click', function() { 
+	  $('#mask , .register-popup').fadeOut(300 , function() {
+		$('#mask').remove();  
+	}); 
+	return false;
+	});
+});
+
+
+
+</script>
+
+</head>
+<body>
+
+
+			<div id="btn-sign">
+				<a href="#login-box" class="login-window">Login</a>
+        	</div>
+			<br><br><br>
+			<div id="btn-sign">
+				<a href="#register-box" class="register-window">Registro</a>
+        	</div>
+			
+			
+			
+
+<div class="container">
+	<div id="content">
+        <div id="login-box" class="login-popup">		 
+				<div id="container">
+				 <a href="#" class="close"><img src="close_pop.png" class="btn_close" title="Close Window" alt="Close" /></a>	
+					<form>					
+						<label for="username">Username:</label>						
+						<input type="text" id="username" name="username">						
+						<label for="password">Password:</label>						
+						<p><a href="#">Olvidaste tu contraseña?</a></p>						
+						<input type="password" id="password" name="password">						
+						<div id="lower">						
+							<input type="checkbox"><label class="check" for="checkbox">Mantener Sesión</label>							
+							<input type="submit" value="Login">						
+						</div><!--/ lower-->					
+					</form>					
+				</div>		  
+		</div>    
+    </div>
+</div>
+
+
+<div class="container">
+	<div id="content">
+        <div id="register-box" class="register-popup">		 
+				<div id="container2">
+				 <a href="#" class="close"><img src="close_pop.png" class="btn_close" title="Close Window" alt="Close" /></a>	
+					<form>					
+						<label for="username">Nombres:</label>						
+						<input type="text" id="username" name="username">						
+						<label for="password">Correo:</label>						
+						<input type="text" id="correo" name="password">		
+						<label for="password">Contraseña:</label>						
+						<input type="password" id="password" name="password">								
+						<div id="lower">						
+							<!-- <input type="checkbox"><label class="check" for="checkbox">Keep me logged in</label>							 -->
+							<input type="submit" value="Registrar">						
+						</div><!--/ lower-->					
+					</form>					
+				</div>		  
+		</div>    
+    </div>
+</div>
+
+
+
+
+
+
+
+
+</body>
+</html>
