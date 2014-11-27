@@ -1,11 +1,12 @@
-var redInnova = angular.module('RedInnova',['ngMaterial','ngRoute','ngResource','red-innova.menusControllers']);
+var redInnova = angular.module('RedInnova',['ngMaterial','ngRoute','ngResource',
+                                            'red-innova.menusControllers']);
 
 
 redInnova.config(['$routeProvider',
     function($routeProvider){
         $routeProvider
         .when('/ofertas',{
-            templateUrl:''
+            templateUrl:'/templates/ofertas.tpl.html'
         })
         .when('/demandas',{
             templateUrl:''

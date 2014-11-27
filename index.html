@@ -13,23 +13,31 @@
         <script src="js/red_innova/red-innova.js"></script>
         <link href="js/angular-material/angular-material.css" rel="stylesheet"/>
         <link href="js/angular-material/themes/green-theme.css" rel="stylesheet"/>
+        <link href="js/angular-material/themes/blue-theme.css" rel="stylesheet"/>
+        <link href="js/angular-material/themes/yellow-theme.css" rel="stylesheet"/>
+
         <link href="css/bootstrap/cerulean.css" rel="stylesheet"/>
         <link href="css/bootstrap/bootstrap.icon-large.css" rel="stylesheet"/>
     </head>
      <body layout='column' md-theme='green' layout-align='center center'>
          <nav>
          </nav>
-         <main layout-fill layout='column'>
-             <md-toolbar class="md-medium-tall" md-theme='green'>
-
+         <main layout-fill layout='column' ng-controller='menuTopCtrl as mtcntrl'>
+             <md-toolbar layout="row" class="md-medium-tall" >
+                 <div flex="25">
+                 </div>
+                 <div layout="column" layout-fill
+                      layout-align='end start'>
+                     <md-tabs md-selected="mtcntrl.selectedOption">
+                         <md-tab ng-repeat='opt in mtcntrl.menuOptions'
+                                 md-on-select="mtcntrl.setView(opt.id)"
+                                 md-theme='{{opt.theme}}'>
+                             {{opt.name}}
+                         </md-tab>
+                     </md-tabs>
+                 </div>
              </md-toolbar>
-             <section layout-fill flex layout='row'>
-                 <md-sidenav class="md-sidenav-left md-whiteframe-z2"
-                             md-component-id="left"
-                             md-is-locked-open="$media('md')">
-                 </md-sidenav>
-                 <md-content layout-fill layout='column' role="main" ng-view>
-                 </md-content>
+             <section layout-fill flex layout='row' ng-view>
              </section>
          </main>
          <footer flex>hello</footer>
