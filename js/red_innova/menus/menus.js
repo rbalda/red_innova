@@ -7,29 +7,25 @@ menusController.controller('menuTopCtrl',['$scope','$location',function($scope,$
                 "id":0,
                 "name":"home",
                 "url":"/",
-                "controller":null,
-                "theme":"green"
+                "controller":null
             },
             {
                 "id":1,
                 "name":"ofertas",
                 "url":"/ofertas",
-                "controller":null,
-                "theme":"yellow"
+                "controller":null
             },
             {
                 "id":2,
                 "name":"demandas",
                 "url":"/",
-                "controller":null,
-                "theme":"default"
+                "controller":null
             },
             {
                 "id":3,
                 "name":"incubaciones",
                 "url":"/",
-                "controller":null,
-                "theme":"blue"
+                "controller":null
             }
         ]
     this.setView = function(op){

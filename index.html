@@ -1,45 +1,40 @@
 <!DOCTYPE html>
 <html lang="en" ng-app="RedInnova">
     <head>
+        <title>Red Innova</title>
         <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/foundation.css">
+        <script src="js/vendor/modernizr.js"></script>
         <script src="js/angular/angular.js"></script>
-        <script src="js/angular-animate/angular-animate.js"></script>
-        <script src="js/angular-aria/angular-aria.js"></script>
-        <script src="js/angular-resource/angular-resource.js"></script>
         <script src="js/angular-route/angular-route.js"></script>
-        <script src="js/hammerjs/hammer.js"></script>
-        <script src="js/angular-material/angular-material.js"></script>
+        <script src="js/angular-resource/angular-resource.js"></script>
         <script src="js/red_innova/menus/menus.js"></script>
         <script src="js/red_innova/red-innova.js"></script>
-        <link href="js/angular-material/angular-material.css" rel="stylesheet"/>
-        <link href="js/angular-material/themes/green-theme.css" rel="stylesheet"/>
-        <link href="js/angular-material/themes/blue-theme.css" rel="stylesheet"/>
-        <link href="js/angular-material/themes/yellow-theme.css" rel="stylesheet"/>
-
-        <link href="css/bootstrap/cerulean.css" rel="stylesheet"/>
-        <link href="css/bootstrap/bootstrap.icon-large.css" rel="stylesheet"/>
     </head>
-     <body layout='column' md-theme='green' layout-align='center center'>
-         <nav>
-         </nav>
-         <main layout-fill layout='column' ng-controller='menuTopCtrl as mtcntrl'>
-             <md-toolbar layout="row" class="md-medium-tall" >
-                 <div flex="25">
-                 </div>
-                 <div layout="column" layout-fill
-                      layout-align='end start'>
-                     <md-tabs md-selected="mtcntrl.selectedOption">
-                         <md-tab ng-repeat='opt in mtcntrl.menuOptions'
-                                 md-on-select="mtcntrl.setView(opt.id)"
-                                 md-theme='{{opt.theme}}'>
-                             {{opt.name}}
-                         </md-tab>
-                     </md-tabs>
-                 </div>
-             </md-toolbar>
-             <section layout-fill flex layout='row' ng-view>
-             </section>
-         </main>
-         <footer flex>hello</footer>
+    <body>
+        <nav class="top-bar" ng-controller="menuTopCtrl as mTopC">
+            <ul class="title-area">
+                <li class="name">
+                    <h1><a href="#">Red Innova</a></h1>
+                </li>
+                <li class="toggle-topbar menu-icon">
+                    <a href="#"><span>Menu</span></a>
+                </li>
+            </ul>
+            <section class="top-bar-section">
+                <ul class="right">
+                    <li ng-repeat='opt in mTopC.menuOptions'>
+                        <a >{{opt.name|uppercase}}</a></li>
+                </ul>
+            </section>
+        </nav>
+    <!--    Seccion de carga de javascripts    -->
+    <script src="js/vendor/jquery.js"></script>
+    <script src="js/foundation.min.js"></script>
+    <script>
+        $(document).foundation();
+    </script>
     </body>
 </html>

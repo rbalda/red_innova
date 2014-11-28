@@ -1,4 +1,4 @@
-var redInnova = angular.module('RedInnova',['ngMaterial','ngRoute','ngResource',
+var redInnova = angular.module('RedInnova',['ngRoute','ngResource',
                                             'red-innova.menusControllers']);
 
 
