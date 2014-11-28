@@ -1,0 +1,21 @@
+[class^="icon-"], [class*=" icon-"] {
+	display: inline-block;
+	color: whitesmoke;
+	fill: currentColor;
+}
+.icon-menu {
+    position: relative;
+    top: 0.5rem;
+	width: 32px;
+	height: 32px;
+    margin: -3px;
+}
+
+@media (max-width=480px){
+    .icon-menu {
+    position: relative;
+    top: 0.0rem;
+	width: 10px;
+	height: 10px;
+}
+}

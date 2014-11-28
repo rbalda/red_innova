@@ -1,7 +1,9 @@
 var menusController = angular.module('red-innova.menusControllers',[]);
 
-menusController.controller('menuTopCtrl',['$scope','$location',function($scope,$location){
+menusController.controller('menuTopCtrl',['$scope','$location','$route',
+                                          function($scope,$location,$route){
     this.selectedOption = 0;
+    this.route = $route;
     this.menuOptions=[
             {
                 "id":0,
@@ -28,12 +30,13 @@ menusController.controller('menuTopCtrl',['$scope','$location',function($scope,$
                 "controller":null
             }
         ]
-    this.setView = function(op){
+    this.select = function(op){
+        this.selectedOption = op;
         this.go(this.menuOptions[op]);
     }
 
-    this.go = function(opt){
-        $location.path(opt.url);
+    this.go=function(op){
+        $location.path(op.url);
     }
 
 }]);

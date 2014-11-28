@@ -12,10 +12,19 @@
         <script src="js/angular-resource/angular-resource.js"></script>
         <script src="js/red_innova/menus/menus.js"></script>
         <script src="js/red_innova/red-innova.js"></script>
+        <link rel="stylesheet" href="css/style.css"/>
     </head>
     <body>
         <nav class="top-bar" ng-controller="menuTopCtrl as mTopC">
+
+            <section class="top-bar-section">
             <ul class="title-area">
+                <li class="left-off-canvas-toggle menu-icon">
+                    <a href="mTopC.route.current.path">
+                        <span>
+                            <svg class="icon-menu"><use xlink:href="img/menu.svg#icon-menu"></use></svg>
+                        </span></a>
+                </li>
                 <li class="name">
                     <h1><a href="#">Red Innova</a></h1>
                 </li>
@@ -23,18 +32,44 @@
                     <a href="#"><span>Menu</span></a>
                 </li>
             </ul>
+            </section>
             <section class="top-bar-section">
                 <ul class="right">
-                    <li ng-repeat='opt in mTopC.menuOptions'>
-                        <a >{{opt.name|uppercase}}</a></li>
+                    <li ng-repeat='opt in mTopC.menuOptions'
+                        ng-click='mTopC.select($index)'
+                        ng-class='{active: mTopC.route.current.activetab == opt.name}'>
+                        <a >{{opt.name|uppercase}}</a>
+                    </li>
+                    <li class="has-dropdown">
+                        <a href="#">USERNAME</a>
+                        <ul class="dropdown">
+                            <li><a href="#">Perfil</a></li>
+                            <li class="active"><a href="#">Salir</a></li>
+                        </ul>
+                    </li>
                 </ul>
             </section>
         </nav>
-    <!--    Seccion de carga de javascripts    -->
-    <script src="js/vendor/jquery.js"></script>
-    <script src="js/foundation.min.js"></script>
-    <script>
-        $(document).foundation();
-    </script>
+        <div class="off-canvas-wrap" data-offcanvas>
+            <div class="inner-wrap">
+                <aside class="left-off-canvas-menu">
+                    <ul class='off-canvas-list'>
+                        <li>
+                            <a href="#">Item 1</a>
+                        </li>
+                    </ul>
+                </aside>
+                <main ng-view>This is a tets</main>
+            </div>
+        </div>
+        <!--    Seccion de carga de javascripts    -->
+        <script src="js/vendor/jquery.js"></script>
+        <script src="js/foundation/foundation.js"></script>
+        <script src="js/foundation/foundation.topbar.js"></script>
+        <script src="js/foundation/foundation.dropdown.js"></script>
+        <script src="js/foundation/foundation.offcanvas.js"></script>
+        <script>
+            $(document).foundation();
+        </script>
     </body>
 </html>

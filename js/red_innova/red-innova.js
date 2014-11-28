@@ -6,15 +6,19 @@ redInnova.config(['$routeProvider',
     function($routeProvider){
         $routeProvider
         .when('/ofertas',{
-            templateUrl:'/templates/ofertas.tpl.html'
+            templateUrl:'/templates/ofertas.tpl.html',
+            activetab:'ofertas'
         })
         .when('/demandas',{
-            templateUrl:''
+            templateUrl:'',
+            activetab:'demandas'
         })
         .when('/incubaciones',{
-            templateUrl:''
+            templateUrl:'',
+            activetab:'incubaciones'
         })
         .otherwise({
-            redirectTo:'/'
+            redirectTo:'/',
+            activetab:'home'
         });
 }]);
