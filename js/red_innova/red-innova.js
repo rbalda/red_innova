@@ -1,4 +1,4 @@
-var redInnova = angular.module('RedInnova',['ngRoute','ngResource',
+var redInnova = angular.module('RedInnova',['ngRoute','ngResource','ngAnimate',
                                             'red-innova.menusControllers']);
 
 
@@ -10,11 +10,11 @@ redInnova.config(['$routeProvider',
             activetab:'ofertas'
         })
         .when('/demandas',{
-            templateUrl:'',
+            templateUrl:'/templates/ofertas.tpl.html',
             activetab:'demandas'
         })
         .when('/incubaciones',{
-            templateUrl:'',
+            templateUrl:'/templates/ofertas.tpl.html',
             activetab:'incubaciones'
         })
         .otherwise({
@@ -22,3 +22,4 @@ redInnova.config(['$routeProvider',
             activetab:'home'
         });
 }]);
+

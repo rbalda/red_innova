@@ -10,19 +10,25 @@
         <script src="js/angular/angular.js"></script>
         <script src="js/angular-route/angular-route.js"></script>
         <script src="js/angular-resource/angular-resource.js"></script>
+        <script src="js/angular-animate/angular-animate.js"></script>
         <script src="js/red_innova/menus/menus.js"></script>
         <script src="js/red_innova/red-innova.js"></script>
         <link rel="stylesheet" href="css/style.css"/>
     </head>
-    <body>
-        <nav class="top-bar" ng-controller="menuTopCtrl as mTopC">
+    <body ng-controller="menuTopCtrl as mTopC">
+
+        <nav class="top-bar" >
 
             <section class="top-bar-section">
             <ul class="title-area">
-                <li class="left-off-canvas-toggle menu-icon">
+                <li class="left-off-canvas-toggle menu-icon icono"
+                    ng-hide='mTopC.selectedOption===0'>
+
                     <a href="mTopC.route.current.path">
                         <span>
-                            <svg class="icon-menu"><use xlink:href="img/menu.svg#icon-menu"></use></svg>
+                            <svg class="icon-menu">
+                                <use xlink:href="img/menu.svg#icon-menu"></use>
+                            </svg>
                         </span></a>
                 </li>
                 <li class="name">
@@ -37,29 +43,29 @@
                 <ul class="right">
                     <li ng-repeat='opt in mTopC.menuOptions'
                         ng-click='mTopC.select($index)'
-                        ng-class='{active: mTopC.route.current.activetab == opt.name}'>
+                        ng-class='{active: opt.id === mTopC.selectedOption}'>
                         <a >{{opt.name|uppercase}}</a>
                     </li>
                     <li class="has-dropdown">
-                        <a href="#">USERNAME</a>
+                        <a href="">USERNAME</a>
                         <ul class="dropdown">
-                            <li><a href="#">Perfil</a></li>
-                            <li class="active"><a href="#">Salir</a></li>
+                            <li><a href="mTopC.route.current.path">Perfil</a></li>
+                            <li class="active"><a href="mTopC.route.current.path">Salir</a></li>
                         </ul>
                     </li>
                 </ul>
             </section>
         </nav>
-        <div class="off-canvas-wrap" data-offcanvas>
-            <div class="inner-wrap">
+        <div class="off-canvas-wrap fill-content" data-offcanvas>
+            <div class="inner-wrap fill-content">
                 <aside class="left-off-canvas-menu">
                     <ul class='off-canvas-list'>
-                        <li>
-                            <a href="#">Item 1</a>
+                        <li ng-repeat="sOpt in mTopC.subOptionsMenu">
+                            <a href="#">{{sOpt.name}}</a>
                         </li>
                     </ul>
                 </aside>
-                <main ng-view>This is a tets</main>
+                <main ng-view class='main'></main>
             </div>
         </div>
         <!--    Seccion de carga de javascripts    -->

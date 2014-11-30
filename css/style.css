@@ -19,3 +19,62 @@
 	height: 10px;
 }
 }
+
+.icono{
+    -webkit-transition: all 500ms ease;
+    -moz-transition: all 500ms ease;
+    -ms-transition: all 500ms ease;
+    -o-transition: all 500ms ease;
+    transition: all 500ms ease;
+    opacity: 1;
+    width:54px;
+}
+
+.icono.ng-hide{
+    width: 0;
+    opacity: 0;
+}
+
+.main {
+    padding:10px;
+    background-color: red;
+    height: 100%;
+}
+
+.main.ng-enter, .main.ng-leave {
+  -webkit-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 1.5s;
+  transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 1.5s;
+
+  display:block;
+  width:100%;
+
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  padding:10px;
+}
+
+.main.ng-enter {
+  left:100%;
+}
+.main.ng-enter.ng-enter-active {
+  left:0;
+}
+.main.ng-leave.ng-leave-active {
+  left:-100%;
+}
+.lastest {
+    display: block;
+    height: 40%;
+}
+
+.center-title{
+    position: relative;
+    text-align: center;
+}
+
+.fill-content{
+    height: 100%;
+}
