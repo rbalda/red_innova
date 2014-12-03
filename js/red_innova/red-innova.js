@@ -14,8 +14,12 @@ redInnova.config(['$routeProvider',
             activetab:'demandas'
         })
         .when('/incubaciones',{
-            templateUrl:'/templates/ofertas.tpl.html',
+            templateUrl:'/templates/incubaciones/incubaciones-home.tpl.html',
             activetab:'incubaciones'
+        })
+        .when('/incubaciones/incubaciones-institucionales',{
+            templateUrl:'/templates/incubaciones/incubaciones-home.tpl.html',
+            activetab: 'incubaciones'
         })
         .otherwise({
             redirectTo:'/',

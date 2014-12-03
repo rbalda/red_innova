@@ -15,12 +15,12 @@ menusController.controller('menuTopCtrl',['$scope','$location','$route',
                 "subOpts":[
                     {
                         "id":0,
-                        "name":"Novedades",
-                        "url":"incubaciones-home.tpl.html",
+                        "name":"Noticias",
+                        "url":"/",
                     },
                     {
                         "id":1,
-                        "name":"Incubaciones Institucionales",
+                        "name":"General",
                         "url":"incubaciones-list-create.tpl.html",
                     }
                 ]
@@ -33,12 +33,12 @@ menusController.controller('menuTopCtrl',['$scope','$location','$route',
                     {
                         "id":0,
                         "name":"Novedades",
-                        "url":"incubaciones-home.tpl.html",
+                        "url":"/incubaciones",
                     },
                     {
                         "id":1,
                         "name":"Incubaciones Institucionales",
-                        "url":"incubaciones-list-create.tpl.html",
+                        "url":"/incubaciones/incubaciones-institucionales",
                     }
                 ]
             },
@@ -67,12 +67,12 @@ menusController.controller('menuTopCtrl',['$scope','$location','$route',
                     {
                         "id":0,
                         "name":"Novedades",
-                        "url":"incubaciones-home.tpl.html",
+                        "url":"/incubaciones",
                     },
                     {
                         "id":1,
                         "name":"Incubaciones Institucionales",
-                        "url":"incubaciones-list-create.tpl.html",
+                        "url":"/incubaciones/incubaciones-institucionales",
                     }
                 ]
             }
@@ -81,9 +81,9 @@ menusController.controller('menuTopCtrl',['$scope','$location','$route',
 
     this.select = function(op){
         this.selectedOption = op;
-        this.go(this.menuOptions[this.selectedOption]);
         this.setSubOptions();
         this.selectSub(0);
+
     }
 
     this.go=function(op){
@@ -96,6 +96,7 @@ menusController.controller('menuTopCtrl',['$scope','$location','$route',
 
     this.selectSub = function(Sop){
         this.selectedSubOption = Sop;
+        this.go(this.menuOptions[this.selectedOption].subOpts[this.selectedSubOption]);
     }
 
 }]);

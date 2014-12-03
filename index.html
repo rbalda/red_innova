@@ -60,8 +60,10 @@
             <div class="inner-wrap fill-content">
                 <aside class="left-off-canvas-menu">
                     <ul class='off-canvas-list'>
-                        <li ng-repeat="sOpt in mTopC.subOptionsMenu">
-                            <a href="#">{{sOpt.name}}</a>
+                        <li ng-repeat="sOpt in mTopC.subOptionsMenu"
+                            ng-click='mTopC.selectSub($index)'
+                            ng-class='{active: sOpt.id === mTopC.selectedSubOption}'>
+                            <a href="">{{sOpt.name}}</a>
                         </li>
                     </ul>
                 </aside>
