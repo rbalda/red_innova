@@ -56,7 +56,9 @@
                 </ul>
             </section>
         </nav>
-        <div class="off-canvas-wrap fill-content" data-offcanvas>
+        <div class="off-canvas-wrap fill-content" 
+             ng-hide="mTopC.selectedOption===0"
+             data-offcanvas>
             <div class="inner-wrap fill-content">
                 <aside class="left-off-canvas-menu">
                     <ul class='off-canvas-list'>
@@ -76,6 +78,7 @@
         <script src="js/foundation/foundation.topbar.js"></script>
         <script src="js/foundation/foundation.dropdown.js"></script>
         <script src="js/foundation/foundation.offcanvas.js"></script>
+        <script src="js/foundation/foundation.reveal.js"></script>
         <script>
             $(document).foundation();
         </script>
