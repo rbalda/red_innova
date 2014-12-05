@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+		  <script src= "http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+<script type="text/javascript" charset="utf-8">
+$(document).ready(function() {
+ $(".ajax-fc-container").captcha({formId: "myForm"});
+ });
+	</script>
+</head>
+    
+<body>
+		  <h2>Validation Example</h2>
+
+		  <form ng-app="" ng-controller="validateCtrl" 
+		  name="myForm" novalidate>
+				 <p>Nombre de la persona:<br>
+					 <input type="text" name="user" ng-model="user" required>
+					 <span style="color:red" ng-show="myForm.user.$dirty && myForm.user.$invalid">
+					 <span ng-show="myForm.user.$error.required">Username is required.</span>
+					 </span>
+					 </p>
+					 <p>Identifici&oacuten:<br>
+					 <input type="text" name="abreviado" ng-model="abreviado">
+					 <span style="color:red" ng-show="myForm.abreviado.$dirty && myForm.user.$invalid">
+					 <span ng-show="myForm.abreviado.$error.required">Abreviado is required.</span>
+					 </span>
+										 </p>
+					 <p>
+					Subir foto: <input type="file" ng-model="logo" name="logo" multiple required>
+					 
+					 <span style="color:red" ng-show="myForm.user.$dirty && myForm.user.$invalid">
+						 <span ng-show="myForm.logo.$error.required">Logo is required.</span>
+					 </span>
+					 </p>
+
+					 <p>Breve descripci&ocauten:<br>
+					 <textarea name="descripcion" ng-model="descripcion" required>
+					 </textarea>
+					 <span style="color:red" ng-show="myForm.descripcion.$dirty && myForm.descripcion.$invalid">
+					 <span ng-show="myForm.descripcion.$error.required">Descripcion is required.</span>
+					 </span>
+					 </p>
+		<p>Ciudad<br>
+					 
+					<select ng-model="Pais" ng-options="color.name for color in colors"></select><br>
+					 </p>
+					<p>Pa&iacutes:<br>
+					 
+					<select ng-model="Pais" ng-options="color.name for color in colors"></select><br>
+					 </p>
+<p>Instituci&oacuten a la que pertenece:<br>
+					 
+					<select ng-model="Pais" ng-options="color.name for color in colors"></select><br>
+					 </p>
+					<p>Cargo:<br>
+					 
+					<select ng-model="Pais" ng-options="color.name for color in colors"></select><br>
+					 </p>
+
+					 <p>Sitio web::<br>
+					 <input type="text" name="user" ng-model="user" required>
+					 <span style="color:red" ng-show="myForm.user.$dirty && myForm.user.$invalid">
+					 <span ng-show="myForm.user.$error.required">Username is required.</span>
+					 </span>
+					 </p>
+	
+				<p>Telefono o Mail: <br>
+					 <input type="text" name="user" ng-model="user" required>
+					 <span style="color:red" ng-show="myForm.user.$dirty && myForm.user.$invalid">
+					 <span ng-show="myForm.user.$error.required">Username is required.</span>
+					 </span>
+					 </p>
+					 <p>Tags:<br>
+					 <textarea name="descripcion" ng-model="descripcion" required>
+					 </textarea>
+					 <span style="color:red" ng-show="myForm.descripcion.$dirty && myForm.descripcion.$invalid">
+					 <span ng-show="myForm.descripcion.$error.required">Descripcion is required.</span>
+					 </span>
+					 </p>
+
+					<p>
+					<img src="img/recaptcha-example.gif">
+					</p>
+					 <p>
+					 <input type="submit"
+					 ng-disabled="myForm.user.$dirty && myForm.user.$invalid || myForm.email.$dirty && myForm.email.$invalid || myForm.logo.$invalid || myForm.descripcion.$invalid ">
+					 </p>
+
+</form>
+
+<script>
+function validateCtrl($scope) {
+    $scope.user = 'John Doe';
+    $scope.email = 'john.doe@gmail.com';
+}
+</script>
+
+</body>
+</html>
